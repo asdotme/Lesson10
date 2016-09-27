@@ -56,7 +56,7 @@ public class BugReportGenerator {
         List<Class<?>> classes = ClassFinder.find(PACKAGE_TO_SCAN);
         //implement
 
-        try (PrintWriter pw = new PrintWriter(new FileWriter("report.txt"))) {
+        try (PrintWriter pw = new PrintWriter(new FileWriter("bug_report.txt"))) {
             classes.stream()
                     .map(cl -> cl.getAnnotation(BugReport.class))
                     .collect(Collectors.groupingBy(a -> a.assignedTo()))
